@@ -1,27 +1,112 @@
+/* Style général */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
+  background-color: #f4f4f4;
 }
 
-nav {
-  background: #007BFF;
-  padding: 10px;
-  text-align: center;
+/* Barre de navigation */
+.navbar {
+  background-color: #333;
+  padding: 0.5em 0;
 }
 
-nav a {
-  color: white;
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.navbar li {
   margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.1em;
+  padding: 0.5em 1em;
+  display: block;
+  transition: background-color 0.3s;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.navbar a:hover,
+.navbar a.active {
+  background-color: #555;
+  border-radius: 5px;
 }
 
-.container {
-  padding: 20px;
+/* Contenu principal */
+main {
+  padding: 2em;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Style pour les flashcards */
+.flashcard {
+  background-color: #eef;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 8px;
+  font-size: 1.3em;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Quiz */
+.quiz-container {
+  margin-top: 2em;
+}
+
+.question {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.answers button {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  margin: 0.5em 0;
+  font-size: 1.1em;
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.answers button:hover {
+  background-color: #ccc;
+}
+
+button.correct {
+  background-color: #4CAF50 !important;
+  color: white;
+}
+
+button.wrong {
+  background-color: #f44336 !important;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
 }
