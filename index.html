@@ -2,148 +2,19 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Apprendre l'anglais - Flashcards & QCM</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { font-family: sans-serif; background: #f2f2f2; margin: 0; padding: 20px; }
-    h1, h2 { text-align: center; }
-    .section { margin-bottom: 40px; }
-    .card { background: white; padding: 10px; margin: 10px auto; max-width: 300px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
-    .qcm-question { background: white; padding: 15px; margin: 15px auto; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .option { padding: 10px; margin: 5px 0; background: #eee; border-radius: 5px; cursor: pointer; }
-    .option:hover { background: #ddd; }
-    .correct { background: #c8f7c5 !important; }
-    .incorrect { background: #f7c5c5 !important; }
-    #score { font-weight: bold; text-align: center; margin-top: 20px; }
-    button { display: block; margin: 20px auto; padding: 10px 20px; font-size: 16px; }
-  </style>
+  <title>Accueil - Flashcards Anglais</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<h1>🇬🇧 Apprendre l'anglais : Flashcards + QCM</h1>
-
-<div class="section">
-  <h2>📆 Jours de la semaine</h2>
-  <div class="card">Monday = Lundi</div>
-  <div class="card">Tuesday = Mardi</div>
-  <div class="card">Wednesday = Mercredi</div>
-  <div class="card">Thursday = Jeudi</div>
-  <div class="card">Friday = Vendredi</div>
-  <div class="card">Saturday = Samedi</div>
-  <div class="card">Sunday = Dimanche</div>
-</div>
-
-<div class="section">
-  <h2>📅 Mois de l'année</h2>
-  <div class="card">January = Janvier</div>
-  <div class="card">February = Février</div>
-  <div class="card">March = Mars</div>
-  <div class="card">April = Avril</div>
-  <div class="card">May = Mai</div>
-  <div class="card">June = Juin</div>
-  <div class="card">July = Juillet</div>
-  <div class="card">August = Août</div>
-  <div class="card">September = Septembre</div>
-  <div class="card">October = Octobre</div>
-  <div class="card">November = Novembre</div>
-  <div class="card">December = Décembre</div>
-</div>
-
-<div class="section">
-  <h2>🔢 Chiffres de 1 à 10</h2>
-  <div class="card">One = Un</div>
-  <div class="card">Two = Deux</div>
-  <div class="card">Three = Trois</div>
-  <div class="card">Four = Quatre</div>
-  <div class="card">Five = Cinq</div>
-  <div class="card">Six = Six</div>
-  <div class="card">Seven = Sept</div>
-  <div class="card">Eight = Huit</div>
-  <div class="card">Nine = Neuf</div>
-  <div class="card">Ten = Dix</div>
-</div>
-
-<div class="section">
-  <h2>📝 QCM interactif</h2>
-  <div id="quiz-container"></div>
-  <div id="score"></div>
-  <button onclick="restartQuiz()">Recommencer</button>
-</div>
-
-<script>
-const questions = [
-  {
-    question: "Que veut dire 'Tuesday' ?",
-    options: ["Jeudi", "Dimanche", "Mardi"],
-    answer: 2
-  },
-  {
-    question: "'Eight' veut dire :",
-    options: ["Neuf", "Huit", "Dix"],
-    answer: 1
-  },
-  {
-    question: "'January' est :",
-    options: ["Janvier", "Juin", "Avril"],
-    answer: 0
-  },
-  {
-    question: "'Five' = ?",
-    options: ["Deux", "Cinq", "Sept"],
-    answer: 1
-  },
-  {
-    question: "Que veut dire 'Saturday' ?",
-    options: ["Dimanche", "Samedi", "Vendredi"],
-    answer: 1
-  }
-];
-
-let currentQuestion = 0;
-let score = 0;
-
-function showQuestion() {
-  const q = questions[currentQuestion];
-  const container = document.getElementById("quiz-container");
-  container.innerHTML = `
-    <div class="qcm-question">
-      <p><strong>${currentQuestion + 1}. ${q.question}</strong></p>
-      ${q.options.map((opt, i) => `
-        <div class="option" onclick="checkAnswer(${i})">${opt}</div>
-      `).join('')}
-    </div>
-  `;
-}
-
-function checkAnswer(choice) {
-  const q = questions[currentQuestion];
-  const options = document.querySelectorAll('.option');
-  options.forEach((opt, i) => {
-    opt.onclick = null;
-    if (i === q.answer) opt.classList.add("correct");
-    if (i === choice && i !== q.answer) opt.classList.add("incorrect");
-  });
-  if (choice === q.answer) score++;
-  setTimeout(() => {
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-      showQuestion();
-    } else {
-      document.getElementById("quiz-container").innerHTML = "";
-      document.getElementById("score").innerText = `Ton score : ${score} / ${questions.length}`;
-    }
-  }, 1000);
-}
-
-function restartQuiz() {
-  currentQuestion = 0;
-  score = 0;
-  document.getElementById("score").innerText = "";
-  showQuestion();
-}
-
-showQuestion();
-</script>
-
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="nombres.html">Nombres</a>
+    <a href="jours.html">Jours</a>
+    <a href="mois.html">Mois</a>
+  </nav>
+  <div class="container">
+    <h1>Bienvenue sur les Flashcards d'Anglais</h1>
+    <p>Choisis une catégorie ci-dessus pour commencer à réviser.</p>
+  </div>
 </body>
 </html>
