@@ -1,12 +1,17 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Style général */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #f4f4f4;
 }
 
-/* Barre de navigation */
+/* MENU DE NAVIGATION */
 .navbar {
   background-color: #333;
   padding: 0.5em 0;
@@ -15,10 +20,8 @@ body {
 .navbar ul {
   display: flex;
   justify-content: center;
+  align-items: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
 }
 
 .navbar li {
@@ -29,10 +32,9 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1em;
   padding: 0.5em 1em;
-  display: block;
   transition: background-color 0.3s;
+  display: block;
 }
 
 .navbar a:hover,
@@ -41,17 +43,17 @@ body {
   border-radius: 5px;
 }
 
-/* Contenu principal */
+/* CONTENU DE LA PAGE */
 main {
   padding: 2em;
   max-width: 800px;
-  margin: 0 auto;
+  margin: auto;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Style pour les flashcards */
+/* FLASHCARDS */
 .flashcard {
   background-color: #eef;
   padding: 1em;
@@ -59,16 +61,15 @@ main {
   border-radius: 8px;
   font-size: 1.3em;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Quiz */
+/* QUIZ */
 .quiz-container {
   margin-top: 2em;
 }
 
 .question {
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-bottom: 1em;
 }
 
@@ -77,12 +78,12 @@ main {
   width: 100%;
   padding: 1em;
   margin: 0.5em 0;
-  font-size: 1.1em;
+  font-size: 1.2em;
   background-color: #ddd;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s;
 }
 
 .answers button:hover {
@@ -97,16 +98,4 @@ button.correct {
 button.wrong {
   background-color: #f44336 !important;
   color: white;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .navbar ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar li {
-    margin: 10px 0;
-  }
 }
