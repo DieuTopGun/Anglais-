@@ -1,73 +1,74 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz - Anglais</title>
+  <meta charset="UTF-8">
+  <title>Quiz - Apprendre l'Anglais</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="nombres.html">Nombres</a></li>
-        <li><a href="jours.html">Jours</a></li>
-        <li><a href="mois.html">Mois</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
-      </ul>
-    </nav>
-  </header>
+
+  <!-- MENU DE NAVIGATION -->
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="nombres.html">Nombres</a></li>
+      <li><a href="jours.html">Jours</a></li>
+      <li><a href="mois.html">Mois</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+  </nav>
 
   <main>
-    <h1>Quiz Interactif - Anglais</h1>
+    <h1>Quiz d'anglais</h1>
     <div id="quiz-container"></div>
-    <button onclick="startQuiz()">Relancer le quiz</button>
+    <button onclick="startQuiz()">Recommencer le quiz</button>
     <p id="score"></p>
   </main>
 
   <script>
     const questions = [
-      { question: "What is the English word for 'Quarante'?", answer: "Forty", choices: ["Forty", "Fifteen", "Fourteen", "Ten"] },
-      { question: "How do you say 'Janvier' in English?", answer: "January", choices: ["June", "January", "July", "March"] },
-      { question: "How do you say '3' in English?", answer: "Three", choices: ["Thirteen", "Thirty", "Three", "Five"] },
-      { question: "How do you say '2' in English?", answer: "Two", choices: ["Two", "Twelve", "Twenty", "Ten"] },
-      { question: "What is '20' in English?", answer: "Twenty", choices: ["Twenty", "Twelve", "Ten", "Two"] },
-      { question: "Translate 'Eighteen' to French.", answer: "Dix-huit", choices: ["Dix", "Dix-huit", "Huit", "Quatorze"] },
-      { question: "What is 'Fourteen' in French?", answer: "Quatorze", choices: ["Quatorze", "Quarante", "Quinze", "Douze"] },
-      { question: "How do you say 'Octobre' in English?", answer: "October", choices: ["October", "August", "December", "November"] },
-      { question: "How do you say 'Septembre' in English?", answer: "September", choices: ["September", "November", "October", "August"] },
-      { question: "How do you write '200' in English?", answer: "Two hundred", choices: ["Two thousand", "Two hundred", "Twenty", "Two"] },
-      { question: "How do you say 'Samedi' in English?", answer: "Saturday", choices: ["Saturday", "Sunday", "Friday", "Monday"] },
-      { question: "How do you say 'Février' in English?", answer: "February", choices: ["February", "April", "May", "January"] },
-      { question: "How do you say 'Mercredi' in English?", answer: "Wednesday", choices: ["Wednesday", "Friday", "Tuesday", "Sunday"] },
-      { question: "What is 'Ten thousand' in French?", answer: "Dix mille", choices: ["Dix", "Cent", "Dix mille", "Mille"] },
-      { question: "Translate 'Seventeen' to French.", answer: "Dix-sept", choices: ["Dix-neuf", "Seize", "Vingt", "Dix-sept"] },
-      { question: "How do you say 'Vendredi' in English?", answer: "Friday", choices: ["Friday", "Saturday", "Monday", "Wednesday"] },
-      { question: "How do you say 'Novembre' in English?", answer: "November", choices: ["November", "December", "October", "August"] },
-      { question: "How do you say 'Avril' in English?", answer: "April", choices: ["August", "April", "May", "July"] },
-      { question: "How do you say 'Juin' in English?", answer: "June", choices: ["June", "July", "January", "May"] },
-      { question: "How do you say 'Dimanche' in English?", answer: "Sunday", choices: ["Sunday", "Saturday", "Monday", "Friday"] },
-      { question: "How do you say 'Lundi' in English?", answer: "Monday", choices: ["Monday", "Sunday", "Wednesday", "Friday"] },
-      { question: "How do you say 'Mardi' in English?", answer: "Tuesday", choices: ["Tuesday", "Thursday", "Wednesday", "Saturday"] },
-      { question: "Translate 'Nineteen' to French.", answer: "Dix-neuf", choices: ["Dix-sept", "Dix-neuf", "Vingt", "Seize"] },
-      { question: "What is 'Fifteen' in French?", answer: "Quinze", choices: ["Quinze", "Cinquante", "Quatorze", "Douze"] },
-      { question: "What is 'Thirty' in French?", answer: "Trente", choices: ["Trente", "Treize", "Quarante", "Vingt"] },
-      { question: "What is 'Eight' in French?", answer: "Huit", choices: ["Dix-huit", "Huit", "Sept", "Neuf"] },
-      { question: "What is the English word for 'Cent'?", answer: "One hundred", choices: ["One hundred", "Ten hundred", "A hundred", "Hundred"] },
-      { question: "How do you say 'Mai' in English?", answer: "May", choices: ["May", "March", "June", "April"] },
-      { question: "How do you say 'Juillet' in English?", answer: "July", choices: ["July", "June", "January", "August"] },
-      { question: "How do you say 'Août' in English?", answer: "August", choices: ["August", "April", "October", "December"] },
-      { question: "How do you say 'Décembre' in English?", answer: "December", choices: ["November", "December", "October", "February"] },
-      { question: "How do you say 'Jeudi' in English?", answer: "Thursday", choices: ["Thursday", "Tuesday", "Wednesday", "Friday"] },
-      { question: "What is the English word for 'Dix'?", answer: "Ten", choices: ["Ten", "Twelve", "Two", "Nine"] },
-      { question: "Translate 'Sixteen' to French.", answer: "Seize", choices: ["Six", "Seize", "Quinze", "Vingt"] },
-      { question: "Translate 'One thousand' to French.", answer: "Mille", choices: ["Mille", "Cent", "Dix", "Dix mille"] },
-      { question: "Translate 'Twelve' to French.", answer: "Douze", choices: ["Deux", "Douze", "Dix", "Onze"] },
-      { question: "What is 'Nine' in French?", answer: "Neuf", choices: ["Neuf", "Nouveau", "Huit", "Dix"] },
-      { question: "Translate 'One' to French.", answer: "Un", choices: ["Un", "Une", "Onze", "Deux"] },
-      { question: "How do you say 'Six' in English?", answer: "Six", choices: ["Six", "Sex", "Seize", "Sick"] },
-      { question: "What is the English for 'Onze'?", answer: "Eleven", choices: ["Eleven", "Twelve", "Ten", "Nine"] },
+      { question: "Que veut dire 'One' ?", answer: "Un", choices: ["Deux", "Trois", "Un", "Quatre"] },
+      { question: "Que veut dire 'Two' ?", answer: "Deux", choices: ["Deux", "Trois", "Un", "Cinq"] },
+      { question: "Que veut dire 'Three' ?", answer: "Trois", choices: ["Un", "Trois", "Quatre", "Cinq"] },
+      { question: "Que veut dire 'Four' ?", answer: "Quatre", choices: ["Trois", "Cinq", "Six", "Quatre"] },
+      { question: "Que veut dire 'Five' ?", answer: "Cinq", choices: ["Six", "Quatre", "Cinq", "Trois"] },
+      { question: "Que veut dire 'Six' ?", answer: "Six", choices: ["Sept", "Six", "Huit", "Cinq"] },
+      { question: "Que veut dire 'Seven' ?", answer: "Sept", choices: ["Six", "Neuf", "Sept", "Dix"] },
+      { question: "Que veut dire 'Eight' ?", answer: "Huit", choices: ["Sept", "Huit", "Dix", "Onze"] },
+      { question: "Que veut dire 'Nine' ?", answer: "Neuf", choices: ["Neuf", "Huit", "Dix", "Sept"] },
+      { question: "Que veut dire 'Ten' ?", answer: "Dix", choices: ["Onze", "Dix", "Douze", "Neuf"] },
+      { question: "Que veut dire 'Eleven' ?", answer: "Onze", choices: ["Onze", "Treize", "Dix", "Douze"] },
+      { question: "Que veut dire 'Twelve' ?", answer: "Douze", choices: ["Treize", "Douze", "Onze", "Quatorze"] },
+      { question: "Que veut dire 'Thirteen' ?", answer: "Treize", choices: ["Douze", "Quatorze", "Treize", "Onze"] },
+      { question: "Que veut dire 'Fourteen' ?", answer: "Quatorze", choices: ["Treize", "Quatorze", "Quinze", "Seize"] },
+      { question: "Que veut dire 'Fifteen' ?", answer: "Quinze", choices: ["Seize", "Quatorze", "Quinze", "Dix-sept"] },
+      { question: "Que veut dire 'Sixteen' ?", answer: "Seize", choices: ["Dix-sept", "Seize", "Dix-huit", "Quinze"] },
+      { question: "Que veut dire 'Seventeen' ?", answer: "Dix-sept", choices: ["Seize", "Dix-huit", "Dix-neuf", "Dix-sept"] },
+      { question: "Que veut dire 'Eighteen' ?", answer: "Dix-huit", choices: ["Dix-sept", "Dix-neuf", "Dix-huit", "Vingt"] },
+      { question: "Que veut dire 'Nineteen' ?", answer: "Dix-neuf", choices: ["Dix-neuf", "Vingt", "Dix-huit", "Seize"] },
+      { question: "Que veut dire 'Twenty' ?", answer: "Vingt", choices: ["Dix", "Vingt", "Trente", "Quarante"] },
+
+      { question: "Comment dit-on 'Lundi' ?", answer: "Monday", choices: ["Sunday", "Tuesday", "Monday", "Wednesday"] },
+      { question: "Comment dit-on 'Mardi' ?", answer: "Tuesday", choices: ["Thursday", "Tuesday", "Monday", "Friday"] },
+      { question: "Comment dit-on 'Mercredi' ?", answer: "Wednesday", choices: ["Wednesday", "Tuesday", "Saturday", "Sunday"] },
+      { question: "Comment dit-on 'Jeudi' ?", answer: "Thursday", choices: ["Thursday", "Tuesday", "Monday", "Friday"] },
+      { question: "Comment dit-on 'Vendredi' ?", answer: "Friday", choices: ["Sunday", "Friday", "Monday", "Tuesday"] },
+      { question: "Comment dit-on 'Samedi' ?", answer: "Saturday", choices: ["Saturday", "Friday", "Monday", "Thursday"] },
+      { question: "Comment dit-on 'Dimanche' ?", answer: "Sunday", choices: ["Sunday", "Tuesday", "Saturday", "Monday"] },
+
+      { question: "Comment dit-on 'Janvier' ?", answer: "January", choices: ["June", "January", "July", "March"] },
+      { question: "Comment dit-on 'Février' ?", answer: "February", choices: ["February", "March", "April", "May"] },
+      { question: "Comment dit-on 'Mars' ?", answer: "March", choices: ["March", "May", "June", "April"] },
+      { question: "Comment dit-on 'Avril' ?", answer: "April", choices: ["May", "April", "March", "June"] },
+      { question: "Comment dit-on 'Mai' ?", answer: "May", choices: ["April", "May", "June", "March"] },
+      { question: "Comment dit-on 'Juin' ?", answer: "June", choices: ["July", "June", "August", "May"] },
+      { question: "Comment dit-on 'Juillet' ?", answer: "July", choices: ["June", "August", "July", "May"] },
+      { question: "Comment dit-on 'Août' ?", answer: "August", choices: ["August", "October", "September", "July"] },
+      { question: "Comment dit-on 'Septembre' ?", answer: "September", choices: ["October", "September", "November", "August"] },
+      { question: "Comment dit-on 'Octobre' ?", answer: "October", choices: ["October", "September", "November", "December"] },
+      { question: "Comment dit-on 'Novembre' ?", answer: "November", choices: ["December", "November", "October", "September"] },
+      { question: "Comment dit-on 'Décembre' ?", answer: "December", choices: ["December", "November", "October", "August"] }
     ];
 
     let score = 0;
@@ -101,16 +102,17 @@
 
       const question = document.createElement('div');
       question.classList.add('question');
-      question.innerText = `Q${current + 1}: ${q.question}`;
+      question.innerText = `Q${current + 1} : ${q.question}`;
       questionBox.appendChild(question);
 
       const ul = document.createElement('ul');
       ul.classList.add('choices');
+
       shuffle(q.choices).forEach(choice => {
         const li = document.createElement('li');
         const btn = document.createElement('button');
         btn.innerText = choice;
-        btn.style.fontSize = "1.2em"; // Réponse plus grosse
+        btn.style.fontSize = "1.4em";
         btn.onclick = () => {
           if (choice === q.answer) {
             score++;
