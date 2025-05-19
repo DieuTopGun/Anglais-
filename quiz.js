@@ -67,7 +67,28 @@ const questions = [
   { question: "Quel est le pronom personnel sujet pour 'le livre' ?", answers: ["she", "you", "he", "we"], correct: 2 },
   { question: "Quel est le pronom personnel sujet pour 'mes parents' ?", answers: ["they (masc.)", "they (fem.)", "we", "you"], correct: 0 },
   { question: "Quel est le pronom personnel sujet pour 'toi et moi' ?", answers: ["we", "you", "they (masc.)", "she"], correct: 0 },
-  { question: "Quel est le pronom personnel sujet pour 'les filles' ?", answers: ["they (masc.)", "they (fem.)", "you", "we"], correct: 1 }
+  { question: "Quel est le pronom personnel sujet pour 'les filles' ?", answers: ["they (masc.)", "they (fem.)", "you", "we"], correct: 1 },
+  
+  { question: "Comment dit-on 'je' en anglais ?", answers: ["I", "you", "he", "she"], correct: 0 },
+  { question: "Comment dit-on 'tu' en anglais ?", answers: ["we", "they", "you", "he"], correct: 2 },
+  { question: "Comment dit-on 'il' en anglais ?", answers: ["he", "she", "it", "they"], correct: 0 },
+  { question: "Comment dit-on 'elle' en anglais ?", answers: ["he", "we", "she", "they"], correct: 2 },
+  { question: "Comment dit-on 'nous' en anglais ?", answers: ["you", "we", "they", "he"], correct: 1 },
+  { question: "Comment dit-on 'vous' en anglais ?", answers: ["you", "they", "we", "she"], correct: 0 },
+  { question: "Comment dit-on 'ils' en anglais ?", answers: ["we", "they", "you", "he"], correct: 1 },
+  { question: "Comment dit-on 'elles' en anglais ?", answers: ["she", "you", "they", "we"], correct: 2 },
+  { question: "Comment dit-on 'Jean et moi' en anglais ?", answers: ["you", "they", "we", "he"], correct: 2 },
+  { question: "Comment dit-on 'Marie et toi' en anglais ?", answers: ["you", "we", "they", "she"], correct: 0 },
+  { question: "Comment dit-on 'Paul' en anglais ?", answers: ["he", "she", "you", "I"], correct: 0 },
+  { question: "Comment dit-on 'Sophie' en anglais ?", answers: ["she", "he", "they", "you"], correct: 0 },
+  { question: "Comment dit-on 'les enfants' en anglais ?", answers: ["he", "they", "you", "it"], correct: 1 },
+  { question: "Comment dit-on 'ma sœur et moi' en anglais ?", answers: ["we", "they", "you", "she"], correct: 0 },
+  { question: "Comment dit-on 'toi et lui' en anglais ?", answers: ["they", "you", "we", "he"], correct: 1 },
+  { question: "Comment dit-on 'la voiture' en anglais ?", answers: ["it", "he", "she", "they"], correct: 0 },
+  { question: "Comment dit-on 'le livre' en anglais ?", answers: ["he", "she", "it", "they"], correct: 2 },
+  { question: "Comment dit-on 'mes parents' en anglais ?", answers: ["they", "we", "you", "he"], correct: 0 },
+  { question: "Comment dit-on 'toi et moi' en anglais ?", answers: ["we", "you", "they", "she"], correct: 0 },
+  { question: "Comment dit-on 'les filles' en anglais ?", answers: ["she", "they", "we", "you"], correct: 1 }
 ];
 function getRandomQuestions(num) {
   const copy = [...questions]; // On fait une copie du tableau original
