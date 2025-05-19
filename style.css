@@ -86,7 +86,7 @@ main {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-*/
+
 .answers button:hover {
   background-color: #ccc;
 }
@@ -100,3 +100,4 @@ button.wrong {
   background-color: #f44336 !important;
   color: white;
 }
+*/
