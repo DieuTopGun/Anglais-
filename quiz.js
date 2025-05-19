@@ -46,7 +46,28 @@ const questions = [
   { question: "Comment dit-on 'septembre' en anglais ?", answers: ["December", "September", "October", "January"], correct: 1 },
   { question: "Comment dit-on 'octobre' en anglais ?", answers: ["August", "November", "October", "September"], correct: 2 },
   { question: "Comment dit-on 'novembre' en anglais ?", answers: ["January", "November", "October", "December"], correct: 1 },
-  { question: "Comment dit-on 'décembre' en anglais ?", answers: ["October", "November", "January", "December"], correct: 3 }
+  { question: "Comment dit-on 'décembre' en anglais ?", answers: ["October", "November", "January", "December"], correct: 3 },
+  
+  { question: {"Quel est le pronom personnel sujet pour 'moi' ?"}, answers: ["Je", "Tu", "Il", "Nous"], correct: 0 },
+  { question: {"Quel est le pronom personnel sujet pour 'toi' ?"}, answers: ["Je", "Il", "Tu", "Vous"], correct: 2 },
+  { question: {"Quel est le pronom personnel sujet pour 'Paul' ?"}, answers: ["Elle", "Il", "Tu", "On"], correct: 1 },
+  { question: {"Quel est le pronom personnel sujet pour 'Paul et moi' ?"}, answers: ["Vous", "Ils", "Nous", "Tu"], correct: 2 },
+  { question: {"Quel est le pronom personnel sujet pour 'Paul et toi' ?"}, answers: ["Vous", "Nous", "Ils", "Tu"], correct: 0 },
+  { question: {"Quel est le pronom personnel sujet pour 'Les enfants' ?"}, answers: ["Ils", "Vous", "On", "Nous"], correct: 0 },
+
+  { question: {"Quelle est la forme du verbe 'être' à la 1re personne du singulier ?"}, answers: ["es", "suis", "est", "sommes"], correct: 1 },
+  { question: {"Quelle est la forme du verbe 'être' à la 2e personne du singulier ?"}, answers: ["es", "êtes", "est", "suis"], correct: 0 },
+  { question: {"Quelle est la forme du verbe 'être' à la 3e personne du singulier ?"}, answers: ["sommes", "êtes", "est", "es"], correct: 2 },
+  { question: {"Quelle est la forme du verbe 'être' à la 1re personne du pluriel ?"}, answers: ["sommes", "sont", "êtes", "es"], correct: 0 },
+  { question: {"Quelle est la forme du verbe 'être' à la 2e personne du pluriel ?"}, answers: ["êtes", "sommes", "est", "sont"], correct: 0 },
+  { question: {"Quelle est la forme du verbe 'être' à la 3e personne du pluriel ?"}, answers: ["sont", "sommes", "êtes", "est"], correct: 0 },
+
+  { question: {"Quelle est la forme du verbe 'avoir' à la 1re personne du singulier ?"}, answers: ["ai", "as", "a", "avons"], correct: 0 },
+  { question: {"Quelle est la forme du verbe 'avoir' à la 2e personne du singulier ?"}, answers: ["a", "ai", "as", "avez"], correct: 2 },
+  { question: {"Quelle est la forme du verbe 'avoir' à la 3e personne du singulier ?"}, answers: ["ont", "a", "as", "ai"], correct: 1 },
+  { question: {"Quelle est la forme du verbe 'avoir' à la 1re personne du pluriel ?"}, answers: ["ont", "avez", "avons", "as"], correct: 2 },
+  { question: {"Quelle est la forme du verbe 'avoir' à la 2e personne du pluriel ?"}, answers: ["avez", "avons", "a", "ai"], correct: 0 },
+  { question: {"Quelle est la forme du verbe 'avoir' à la 3e personne du pluriel ?"}, answers: ["a", "ont", "avons", "avez"], correct: 1 }
 ];
 // Tirer 20 questions aléatoires parmi les 40
 function getRandomQuestions(num) {
