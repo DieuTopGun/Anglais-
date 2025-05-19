@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil - Flashcards Anglais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="nombres.html">Nombres</a></li>
+          <li><a href="jours.html">Jours</a></li>
+          <li><a href="mois.html">Mois</a></li>
+          <li><a href="verbes.html">Les verbes</a></li>
+          <li><a href="emotions.html">Les emotions</a></li>
+          <li><a href="annimaux.html">Les annimaux</a></li>
+          <li><a href="saluer.html">Se saluer</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </div>
+  <div class="container">
+      <h1>Se saluer en Anglais</h1>
+      
+      <div class="greeting-grid">
+        
+        <div class="greeting-card">
+          <div class="greeting-fr">Bonjour (général)</div>
+          <div class="greeting-en">Hello / Hi</div>
+          <div class="greeting-context">
+            📍 Utilisation : Tout moment, informel<br>
+            ⚠️ Éviter "Hi" avec supérieurs hiérarchiques
+          </div>
+        </div>
+
+        <div class="greeting-card">
+          <div class="greeting-fr">Bonjour (matin)</div>
+          <div class="greeting-en">Good morning</div>
+          <div class="greeting-context">
+            📍 Utilisation : Lever du jour à midi<br>
+            🌅 Réponse typique : "Morning!" (informel)
+          </div>
+        </div>
+
+        <div class="greeting-card">
+          <div class="greeting-fr">Bonjour (après-midi)</div>
+          <div class="greeting-en">Good afternoon</div>
+          <div class="greeting-context">
+            📍 Utilisation : Midi à 17h environ<br>
+            🏢 Surtout utilisé en contexte professionnel
+          </div>
+        </div>
+
+        <div class="greeting-card">
+          <div class="greeting-fr">Bonsoir</div>
+          <div class="greeting-en">Good evening</div>
+          <div class="greeting-context">
+            📍 Utilisation : À partir de 17h<br>
+            🌃 En arrivant quelque part, pas en partant
+          </div>
+        </div>
+
+        <div class="greeting-card">
+          <div class="greeting-fr">Au revoir</div>
+          <div class="greeting-en">Goodbye / Bye</div>
+          <div class="greeting-context">
+            📍 "Goodbye" = formel<br>
+            👋 "Bye" = informel, "Bye-bye" = enfantin
+          </div>
+        </div>
+
+        <div class="greeting-card">
+          <div class="greeting-fr">Bonne nuit</div>
+          <div class="greeting-en">Good night</div>
+          <div class="greeting-context">
+            📍 Uniquement au coucher<br>
+            💤 Ne pas utiliser pour dire "bonsoir"
+          </div>
+        </div>
+
+      </div>
+
+      <style>
+        .greeting-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 20px;
+          padding: 20px;
+        }
+
+        .greeting-card {
+          background: #f8f9fa;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .greeting-fr {
+          color: #2c3e50;
+          font-size: 1.2em;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .greeting-en {
+          color: #3498db;
+          font-size: 1.4em;
+          margin: 15px 0;
+          padding: 10px 0;
+          border-bottom: 2px solid #3498db;
+        }
+
+        .greeting-context {
+          color: #7f8c8d;
+          font-size: 0.9em;
+          line-height: 1.4;
+        }
+      </style>
+    </div>
+  </body>
+  </html>
