@@ -1,39 +1,105 @@
-const allQuestions = [
-  {q:"Comment dit-on 'Novembre' en anglais ?", a:["October","November","December","September"], correct:1},
-  {q:"Comment dit-on 'Samedi' en anglais ?", a:["Sunday","Saturday","Friday","Monday"], correct:1},
-  {q:"Comment dit-on 'Septembre' en anglais ?", a:["September","June","August","May"], correct:0},
-  {q:"Comment dit-on 'Mardi' en anglais ?", a:["Wednesday","Tuesday","Thursday","Friday"], correct:1},
-  {q:"Comment dit-on 'Huit' en anglais ?", a:["Seven","Nine","Eight","Six"], correct:2},
-  {q:"Comment dit-on 'Dix-sept' en anglais ?", a:["Seventeen","Fifteen","Fourteen","Sixteen"], correct:0},
-  {q:"Comment dit-on 'Trente' en anglais ?", a:["Thirty","Twenty","Thirty-five","Forty"], correct:0},
-  {q:"Comment dit-on 'Mille' en anglais ?", a:["Ten thousand","Thousand","Hundred","Million"], correct:1},
-  {q:"Comment dit-on 'Rouge' en anglais ?", a:["Blue","Green","Red","Yellow"], correct:2},
-  {q:"Comment dit-on 'Vert' en anglais ?", a:["Yellow","Green","Blue","Red"], correct:1},
-  {q:"Comment dit-on 'Bleu' en anglais ?", a:["Blue","Black","Pink","White"], correct:0},
-  {q:"Comment dit-on 'Orange' en anglais ?", a:["Orange","Purple","Red","Brown"], correct:0},
-  {q:"Comment dit-on 'Printemps' en anglais ?", a:["Autumn","Winter","Spring","Summer"], correct:2},
-  {q:"Comment dit-on 'Hiver' en anglais ?", a:["Winter","Spring","Summer","Autumn"], correct:0},
-  {q:"Comment dit-on 'Été' en anglais ?", a:["Spring","Summer","Winter","Autumn"], correct:1},
-  {q:"Comment dit-on 'Automne' en anglais ?", a:["Summer","Winter","Spring","Autumn"], correct:3},
-  {q:"Comment dit-on 'Tête' en anglais ?", a:["Head","Hand","Foot","Leg"], correct:0},
-  {q:"Comment dit-on 'Main' en anglais ?", a:["Foot","Hand","Head","Arm"], correct:1},
-  {q:"Comment dit-on 'Pied' en anglais ?", a:["Leg","Foot","Hand","Head"], correct:1},
-  {q:"Comment dit-on 'Jambe' en anglais ?", a:["Arm","Foot","Leg","Hand"], correct:2},
-  {q:"Comment dit-on 'Bleu clair' en anglais ?", a:["Light blue","Dark blue","Blue","Sky blue"], correct:0},
-  {q:"Comment dit-on 'Deux mille' en anglais ?", a:["Two thousand","Two hundred","Twenty","Two million"], correct:0},
-  {q:"Comment dit-on 'Quarante-cinq' en anglais ?", a:["Forty-five","Fifty-five","Forty","Thirty-five"], correct:0},
-  {q:"Comment dit-on 'Vendredi' en anglais ?", a:["Thursday","Friday","Tuesday","Wednesday"], correct:1},
-  {q:"Comment dit-on 'Dimanche' en anglais ?", a:["Sunday","Monday","Saturday","Friday"], correct:0},
-  {q:"Comment dit-on 'Lundi' en anglais ?", a:["Monday","Tuesday","Sunday","Wednesday"], correct:0},
-  {q:"Comment dit-on 'Jeudi' en anglais ?", a:["Wednesday","Thursday","Tuesday","Friday"], correct:1},
-  {q:"Comment dit-on 'Cent' en anglais ?", a:["Hundred","Thousand","Million","Ten"], correct:0},
-  {q:"Comment dit-on 'Quinze' en anglais ?", a:["Fifteen","Fourteen","Sixteen","Seventeen"], correct:0},
-  {q:"Comment dit-on 'Bleu foncé' en anglais ?", a:["Dark blue","Light blue","Blue","Navy"], correct:0},
-  {q:"Comment dit-on 'Rose' en anglais ?", a:["Pink","Red","Orange","Purple"], correct:0},
-  {q:"Comment dit-on 'Corps' en anglais ?", a:["Body","Head","Hand","Foot"], correct:0},
-  {q:"Comment dit-on 'Bras' en anglais ?", a:["Arm","Leg","Hand","Foot"], correct:0},
-  {q:"Comment dit-on 'Mille cinq cents' en anglais ?", a:["One thousand five hundred","One thousand five","Five hundred","One hundred fifty"], correct:0},
+// 40 questions sur nombres, jours, mois en anglais et vocabulaire de base
+
+const questions = [
+  // Nombres (15 questions)
+  { question: "How do you say '1' in English?", answers: ["One", "Two", "Ten", "Zero"], correct: 0 },
+  { question: "How do you say '5' in English?", answers: ["Five", "Seven", "Four", "Six"], correct: 0 },
+  { question: "What is '10' in English?", answers: ["Ten", "Twelve", "Twenty", "Eleven"], correct: 0 },
+  { question: "How do you say '15' in English?", answers: ["Fifteen", "Fifty", "Five", "Fourteen"], correct: 0 },
+  { question: "What is '20' in English?", answers: ["Twenty", "Twelve", "Two", "Thirty"], correct: 0 },
+  { question: "How do you say '100' in English?", answers: ["One hundred", "Ten", "Thousand", "Hundred"], correct: 0 },
+  { question: "What number is 'Seventy'?", answers: ["70", "17", "7", "77"], correct: 0 },
+  { question: "How do you say '0' in English?", answers: ["Zero", "One", "None", "Nothing"], correct: 0 },
+  { question: "What is '30' in English?", answers: ["Thirty", "Thirteen", "Thirty-one", "Three"], correct: 0 },
+  { question: "How do you say '40' in English?", answers: ["Forty", "Fourty", "Four", "Fourth"], correct: 0 },
+  { question: "What number is 'Ninety'?", answers: ["90", "9", "19", "99"], correct: 0 },
+  { question: "How do you say '50' in English?", answers: ["Fifty", "Fifteen", "Fifty-five", "Five"], correct: 0 },
+  { question: "What is '60' in English?", answers: ["Sixty", "Six", "Sixteen", "Seventy"], correct: 0 },
+  { question: "How do you say '25' in English?", answers: ["Twenty-five", "Twenty", "Fifteen", "Fifty"], correct: 0 },
+  { question: "What number is 'Thirteen'?", answers: ["13", "30", "3", "31"], correct: 0 },
+
+  // Jours de la semaine (13 questions)
+  { question: "What is 'lundi' in English?", answers: ["Monday", "Tuesday", "Sunday", "Saturday"], correct: 0 },
+  { question: "How do you say 'mercredi' in English?", answers: ["Wednesday", "Thursday", "Tuesday", "Monday"], correct: 0 },
+  { question: "What day is 'vendredi' in English?", answers: ["Friday", "Friday", "Sunday", "Monday"], correct: 0 },
+  { question: "How do you say 'dimanche' in English?", answers: ["Sunday", "Saturday", "Monday", "Tuesday"], correct: 0 },
+  { question: "What is 'jeudi' in English?", answers: ["Thursday", "Wednesday", "Friday", "Tuesday"], correct: 0 },
+  { question: "How do you say 'samedi' in English?", answers: ["Saturday", "Sunday", "Friday", "Thursday"], correct: 0 },
+  { question: "What day is 'mardi' in English?", answers: ["Tuesday", "Monday", "Wednesday", "Thursday"], correct: 0 },
+  { question: "What is the first day of the week in English?", answers: ["Monday", "Sunday", "Saturday", "Friday"], correct: 0 },
+  { question: "How do you say 'weekend' in French?", answers: ["Weekend", "Week", "Month", "Year"], correct: 0 },
+  { question: "Which day comes after Friday?", answers: ["Saturday", "Sunday", "Thursday", "Monday"], correct: 0 },
+  { question: "Which day comes before Wednesday?", answers: ["Tuesday", "Thursday", "Monday", "Friday"], correct: 0 },
+  { question: "How do you say 'jour' in English?", answers: ["Day", "Night", "Month", "Year"], correct: 0 },
+  { question: "What is 'week' in French?", answers: ["Semaine", "Jour", "Mois", "Année"], correct: 0 },
+
+  // Mois de l'année (12 questions)
+  { question: "How do you say 'janvier' in English?", answers: ["January", "June", "July", "March"], correct: 0 },
+  { question: "What is 'février' in English?", answers: ["February", "December", "April", "October"], correct: 0 },
+  { question: "How do you say 'mars' in English?", answers: ["March", "May", "August", "September"], correct: 0 },
+  { question: "What is 'avril' in English?", answers: ["April", "March", "June", "July"], correct: 0 },
+  { question: "How do you say 'mai' in English?", answers: ["May", "March", "August", "January"], correct: 0 },
+  { question: "What is 'juin' in English?", answers: ["June", "July", "May", "August"], correct: 0 },
+  { question: "How do you say 'juillet' in English?", answers: ["July", "June", "August", "September"], correct: 0 },
+  { question: "What is 'août' in English?", answers: ["August", "April", "October", "November"], correct: 0 },
+  { question: "How do you say 'septembre' in English?", answers: ["September", "October", "December", "January"], correct: 0 },
+  { question: "What is 'octobre' in English?", answers: ["October", "September", "November", "August"], correct: 0 },
+  { question: "How do you say 'novembre' in English?", answers: ["November", "December", "October", "January"], correct: 0 },
+  { question: "What is 'décembre' in English?", answers: ["December", "November", "October", "January"], correct: 0 }
 ];
 
-// Fonction pour tirer au hasard sans doublon
-function
+// Tirer 20 questions aléatoires parmi les 40
+function getRandomQuestions(num) {
+  const shuffled = questions.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, num);
+}
+
+const quizContainer = document.getElementById("quiz-container");
+let currentQuestions = [];
+let score = 0;
+let questionIndex = 0;
+
+function showQuestion() {
+  if(questionIndex >= currentQuestions.length) {
+    quizContainer.innerHTML = `<h2>Quiz terminé! Score: ${score} / ${currentQuestions.length}</h2>
+    <button onclick="startQuiz()">Recommencer</button>`;
+    return;
+  }
+  const q = currentQuestions[questionIndex];
+  let answersHtml = "";
+  q.answers.forEach((ans, i) => {
+    answersHtml += `<button onclick="selectAnswer(${i}, this)">${ans}</button>`;
+  });
+
+  quizContainer.innerHTML = `
+    <div class="question">${q.question}</div>
+    <div class="answers">${answersHtml}</div>
+  `;
+}
+
+function selectAnswer(selected, btn) {
+  const q = currentQuestions[questionIndex];
+  if(selected === q.correct) {
+    score++;
+    btn.classList.add("correct");
+  } else {
+    btn.classList.add("wrong");
+  }
+  // Bloquer les boutons
+  const buttons = document.querySelectorAll(".answers button");
+  buttons.forEach(b => b.disabled = true);
+  // Passage à la question suivante après 1.2s
+  setTimeout(() => {
+    questionIndex++;
+    showQuestion();
+  }, 1200);
+}
+
+function startQuiz() {
+  score = 0;
+  questionIndex = 0;
+  currentQuestions = getRandomQuestions(20);
+  showQuestion();
+}
+
+window.onload = startQuiz;
