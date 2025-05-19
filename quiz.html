@@ -1,222 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Quiz Anglais - Flashcards</title>
-<style>
-  /* RESET */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  }
-  /* MENU DE NAVIGATION */
-  .navbar {
-    background-color: #333;
-    padding: 0.5em 0;
-  }
-  .navbar ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-  }
-  .navbar li {
-    margin: 0 15px;
-  }
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5em 1em;
-    transition: background-color 0.3s;
-    display: block;
-  }
-  .navbar a:hover,
-  .navbar a.active {
-    background-color: #555;
-    border-radius: 5px;
-  }
-  /* CONTENU */
-  main {
-    padding: 2em 1em 4em;
-    max-width: 800px;
-    margin: auto;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  /* QUIZ */
-  .quiz-container {
-    margin-top: 2em;
-  }
-  .question {
-    font-size: 1.4em;
-    margin-bottom: 1.2em;
-  }
-  .answers button {
-    display: block;
-    width: 100%;
-    padding: 1em;
-    margin: 0.6em 0;
-    font-size: 1.2em;
-    background-color: #ddd;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    text-align: left;
-  }
-  .answers button:hover {
-    background-color: #ccc;
-  }
-  button.correct {
-    background-color: #4CAF50 !important;
-    color: white;
-  }
-  button.wrong {
-    background-color: #f44336 !important;
-    color: white;
-  }
-  /* SCORE */
-  .score-container {
-    font-size: 1.5em;
-    margin-top: 2em;
-    text-align: center;
-  }
-  /* Responsive small */
-  @media (max-width: 480px) {
-    .navbar ul {
-      flex-wrap: wrap;
-      padding: 0 10px;
-    }
-    .navbar li {
-      margin: 8px 10px;
-    }
-    main {
-      padding: 1em;
-      margin: 0.5em;
-    }
-    .question {
-      font-size: 1.2em;
-    }
-    .answers button {
-      font-size: 1em;
-      padding: 0.8em;
-    }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Quiz Anglais</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="nombres.html">Nombres</a></li>
-      <li><a href="jours.html">Jours</a></li>
-      <li><a href="mois.html">Mois</a></li>
-      <li><a href="quiz.html" class="active">Quiz</a></li>
-    </ul>
-  </nav>
-  <main>
-    <h1>Quiz d'anglais - Flashcards</h1>
-    <div class="quiz-container">
-      <div id="question" class="question"></div>
-      <div id="answers" class="answers"></div>
-      <button id="nextBtn" style="display:none; margin-top:1em; padding:1em 2em; font-size:1.2em;">Question suivante</button>
-    </div>
-    <div id="score-container" class="score-container" style="display:none;"></div>
-  </main>
 
-<script>
-  // Toutes les questions (40), bien réparties sur jours, mois, nombres, saisons, couleurs, parties du corps
-  const allQuestions = [
-    {q:"Comment dit-on 'Novembre' en anglais ?", a:["October","November","December","September"], correct:1},
-    {q:"Comment dit-on 'Samedi' en anglais ?", a:["Sunday","Saturday","Friday","Monday"], correct:1},
-    {q:"Comment dit-on 'Septembre' en anglais ?", a:["September","June","August","May"], correct:0},
-    {q:"Comment dit-on 'Mardi' en anglais ?", a:["Wednesday","Tuesday","Thursday","Friday"], correct:1},
-    {q:"Comment dit-on 'Huit' en anglais ?", a:["Seven","Nine","Eight","Six"], correct:2},
-    {q:"Comment dit-on 'Dix-sept' en anglais ?", a:["Seventeen","Fifteen","Fourteen","Sixteen"], correct:0},
-    {q:"Comment dit-on 'Trente' en anglais ?", a:["Thirty","Twenty","Thirty-five","Forty"], correct:0},
-    {q:"Comment dit-on 'Mille' en anglais ?", a:["Ten thousand","Thousand","Hundred","Million"], correct:1},
-    {q:"Comment dit-on 'Rouge' en anglais ?", a:["Blue","Green","Red","Yellow"], correct:2},
-    {q:"Comment dit-on 'Vert' en anglais ?", a:["Yellow","Green","Blue","Red"], correct:1},
-    {q:"Comment dit-on 'Bleu' en anglais ?", a:["Blue","Black","Pink","White"], correct:0},
-    {q:"Comment dit-on 'Orange' en anglais ?", a:["Orange","Purple","Red","Brown"], correct:0},
-    {q:"Comment dit-on 'Printemps' en anglais ?", a:["Autumn","Winter","Spring","Summer"], correct:2},
-    {q:"Comment dit-on 'Hiver' en anglais ?", a:["Winter","Spring","Summer","Autumn"], correct:0},
-    {q:"Comment dit-on 'Été' en anglais ?", a:["Spring","Summer","Winter","Autumn"], correct:1},
-    {q:"Comment dit-on 'Automne' en anglais ?", a:["Summer","Winter","Spring","Autumn"], correct:3},
-    {q:"Comment dit-on 'Tête' en anglais ?", a:["Head","Hand","Foot","Leg"], correct:0},
-    {q:"Comment dit-on 'Main' en anglais ?", a:["Foot","Hand","Head","Arm"], correct:1},
-    {q:"Comment dit-on 'Pied' en anglais ?", a:["Leg","Foot","Hand","Head"], correct:1},
-    {q:"Comment dit-on 'Jambe' en anglais ?", a:["Arm","Foot","Leg","Hand"], correct:2},
-    {q:"Comment dit-on 'Bleu clair' en anglais ?", a:["Light blue","Dark blue","Blue","Sky blue"], correct:0},
-    {q:"Comment dit-on 'Deux mille' en anglais ?", a:["Two thousand","Two hundred","Twenty","Two million"], correct:0},
-    {q:"Comment dit-on 'Quarante-cinq' en anglais ?", a:["Forty-five","Fifty-five","Forty","Thirty-five"], correct:0},
-    {q:"Comment dit-on 'Vendredi' en anglais ?", a:["Thursday","Friday","Tuesday","Wednesday"], correct:1},
-    {q:"Comment dit-on 'Dimanche' en anglais ?", a:["Sunday","Monday","Saturday","Friday"], correct:0},
-    {q:"Comment dit-on 'Lundi' en anglais ?", a:["Monday","Tuesday","Sunday","Wednesday"], correct:0},
-    {q:"Comment dit-on 'Jeudi' en anglais ?", a:["Wednesday","Thursday","Tuesday","Friday"], correct:1},
-    {q:"Comment dit-on 'Cent' en anglais ?", a:["Hundred","Thousand","Million","Ten"], correct:0},
-    {q:"Comment dit-on 'Quinze' en anglais ?", a:["Fifteen","Fourteen","Sixteen","Seventeen"], correct:0},
-    {q:"Comment dit-on 'Bleu foncé' en anglais ?", a:["Dark blue","Light blue","Blue","Navy"], correct:0},
-    {q:"Comment dit-on 'Rose' en anglais ?", a:["Pink","Red","Orange","Purple"], correct:0},
-    {q:"Comment dit-on 'Corps' en anglais ?", a:["Body","Head","Hand","Foot"], correct:0},
-    {q:"Comment dit-on 'Bras' en anglais ?", a:["Arm","Leg","Hand","Foot"], correct:0},
-    {q:"Comment dit-on 'Mille cinq cents' en anglais ?", a:["One thousand five hundred","One thousand five","Five hundred","One hundred fifty"], correct:0},
-    {q:"Comment dit-on 'Huit mille' en anglais ?", a:["Eight hundred","Eight thousand","Eighty","Eight"], correct:1},
-    {q:"Comment dit-on 'Quatre mille' en anglais ?", a:["Four hundred","Four thousand","Forty","Four"], correct:1},
-    {q:"Comment dit-on 'Sept' en anglais ?", a:["Seven","Eight","Six","Nine"], correct:0},
-    {q:"Comment dit-on 'Dix-neuf' en anglais ?", a:["Nineteen","Eighteen","Seventeen","Twenty"], correct:0},
-    {q:"Comment dit-on 'Couleur' en anglais ?", a:["Colour","Color","Hue","Shade"], correct:1},
-  ];
+<nav>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="nombres.html">Nombres</a></li>
+    <li><a href="jours.html">Jours</a></li>
+    <li><a href="mois.html">Mois</a></li>
+    <li><a href="quiz.html" class="active">Quiz</a></li>
+  </ul>
+</nav>
 
-  // Mélanger les questions
-  function shuffle(array) {
-    for(let i = array.length -1; i > 0; i--) {
-      const j = Math.floor(Math.random()*(i+1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
+<main>
+  <h1>Quiz d'anglais</h1>
+  <div class="quiz-container">
+    <div id="question" class="question"></div>
+    <div id="answers" class="answers"></div>
+    <button id="nextBtn">Question suivante</button>
+  </div>
+  <div id="score-container" style="display:none;"></div>
+</main>
 
-  // Variables quiz
-  const totalQuestions = 20;
-  let shuffledQuestions = shuffle([...allQuestions]).slice(0,totalQuestions);
-  let currentQuestionIndex = 0;
-  let score = 0;
-
-  // DOM elements
-  const questionEl = document.getElementById('question');
-  const answersEl = document.getElementById('answers');
-  const nextBtn = document.getElementById('nextBtn');
-  const scoreContainer = document.getElementById('score-container');
-
-  function showQuestion() {
-    resetState();
-    const currentQ = shuffledQuestions[currentQuestionIndex];
-    questionEl.textContent = `${currentQuestionIndex + 1}. ${currentQ.q}`;
-    currentQ.a.forEach((answerText, idx) => {
-      const button = document.createElement('button');
-      button.textContent = answerText;
-      button.addEventListener('click', () => selectAnswer(idx));
-      answersEl.appendChild(button);
-    });
-  }
-
-  function resetState() {
-    nextBtn.style.display = 'none';
-    while(answersEl.firstChild) {
-      answersEl.removeChild(answersEl.firstChild);
-    }
-  }
-
-  function selectAnswer(selectedIdx) {
-    const currentQ = shuffledQuestions[currentQuestionIndex];
-    const buttons = answersEl.querySelectorAll('button');
-   
+<script src="quiz.js"></script>
+</body>
+</html>
