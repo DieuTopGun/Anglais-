@@ -88,7 +88,12 @@ const questions = [
   { question: "Comment dit-on 'le livre' en anglais ?", answers: ["he", "she", "it", "they"], correct: 2 },
   { question: "Comment dit-on 'mes parents' en anglais ?", answers: ["they", "we", "you", "he"], correct: 0 },
   { question: "Comment dit-on 'toi et moi' en anglais ?", answers: ["we", "you", "they", "she"], correct: 0 },
-  { question: "Comment dit-on 'les filles' en anglais ?", answers: ["she", "they", "we", "you"], correct: 1 }
+  { question: "Comment dit-on 'les filles' en anglais ?", answers: ["she", "they", "we", "you"], correct: 1 },
+  { question: "Comment dit-on 'ça' ou 'cela' en anglais ?", answers: ["he", "she", "they", "it"], correct: 3 },
+  { question: "Quel est le pronom personnel sujet en anglais pour un objet comme 'la voiture' ?", answers: ["he", "she", "it", "they"], correct: 2 },
+  { question: "Quel pronom personnel sujet en anglais utilise-t-on pour un animal ou un objet ?", answers: ["it", "he", "we", "they"], correct: 0 },
+  { question: "Quel pronom anglais remplace un mot comme 'le soleil' ?", answers: ["she", "they", "he", "it"], correct: 3 },
+  { question: "Quel pronom anglais utilise-t-on pour parler du temps, comme dans 'il pleut' ?", answers: ["it", "he", "they", "she"], correct: 0 }
 ];
 function getRandomQuestions(num) {
   const copy = [...questions]; // On fait une copie du tableau original
