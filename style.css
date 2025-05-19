@@ -64,6 +64,7 @@ main {
 }
 
 /* QUIZ */
+/* 
 .quiz-container {
   margin-top: 2em;
 }
@@ -72,7 +73,7 @@ main {
   font-size: 1.3em;
   margin-bottom: 1em;
 }
-
+***/
 .answers button {
   display: block;
   width: 100%;
