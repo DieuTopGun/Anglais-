@@ -92,3 +92,18 @@ button.wrong {
   background-color: #f44336 !important;
   color: white;
 }
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin-bottom: 40px;
+  background-color: #ffffff;
+}
+th, td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background-color: #dcdde1;
+}
+  
