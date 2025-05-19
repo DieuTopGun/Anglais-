@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil - Flashcards Anglais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="nombres.html">Nombres</a></li>
+          <li><a href="jours.html">Jours</a></li>
+          <li><a href="mois.html">Mois</a></li>
+          <li><a href="verbes.html">Les verbes</a></li>
+          <li><a href="emotions.html">Les emotions</a></li>
+          <li><a href="annimaux.html">Les annimaux</a></li>
+          <li><a href="saluer.html">Se saluer</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </div>
+  <div class="container">
+      <h1>Les Animaux en Anglais</h1>
+      <div class="animal-grid">
+        
+        <div class="animal-card">
+          <img src="img/sheep.jpg" alt="Mouton">
+          <div class="animal-name fr">Mouton</div>
+          <div class="animal-name en">Sheep</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/pig.jpg" alt="Cochon">
+          <div class="animal-name fr">Cochon</div>
+          <div class="animal-name en">Pig</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/cow.jpg" alt="Vache">
+          <div class="animal-name fr">Vache</div>
+          <div class="animal-name en">Cow</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/duck.jpg" alt="Canard">
+          <div class="animal-name fr">Canard</div>
+          <div class="animal-name en">Duck</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/chicken.jpg" alt="Poule">
+          <div class="animal-name fr">Poule</div>
+          <div class="animal-name en">Chicken</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/chick.jpg" alt="Poussin">
+          <div class="animal-name fr">Poussin</div>
+          <div class="animal-name en">Chick</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/horse.jpg" alt="Cheval">
+          <div class="animal-name fr">Cheval</div>
+          <div class="animal-name en">Horse</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/dog.jpg" alt="Chien">
+          <div class="animal-name fr">Chien</div>
+          <div class="animal-name en">Dog</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/panda.jpg" alt="Panda">
+          <div class="animal-name fr">Panda</div>
+          <div class="animal-name en">Panda</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/elephant.jpg" alt="Éléphant">
+          <div class="animal-name fr">Éléphant</div>
+          <div class="animal-name en">Elephant</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/rabbit.jpg" alt="Lapin">
+          <div class="animal-name fr">Lapin</div>
+          <div class="animal-name en">Rabbit</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/mouse.jpg" alt="Souris">
+          <div class="animal-name fr">Souris</div>
+          <div class="animal-name en">Mouse</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/swan.jpg" alt="Cygne">
+          <div class="animal-name fr">Cygne</div>
+          <div class="animal-name en">Swan</div>
+        </div>
+
+        <div class="animal-card">
+          <img src="img/snake.jpg" alt="Serpent">
+          <div class="animal-name fr">Serpent</div>
+          <div class="animal-name en">Snake</div>
+        </div>
+
+      </div>
+      <style>
+        .animal-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 25px;
+          padding: 20px;
+        }
+        
+        .animal-card {
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+          transition: transform 0.3s ease;
+        }
+        
+        .animal-card:hover {
+          transform: translateY(-5px);
+        }
+        
+        .animal-card img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-bottom: 2px solid #3498db;
+        }
+        
+        .animal-name {
+          padding: 15px;
+          text-align: center;
+        }
+        
+        .fr { 
+          background: #f8f9fa;
+          font-size: 1.1em;
+          color: #2c3e50;
+        }
+        
+        .en {
+          background: #3498db;
+          color: white;
+          font-size: 1.2em;
+          font-weight: bold;
+        }
+      </style>
+    </div>
+  </body>
+  </html>
