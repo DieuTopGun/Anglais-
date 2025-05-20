@@ -1,145 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <title>Date & nombres ordinaux en anglais britannique</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9fb;
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
-            color: #2c3e50;
-        }
-        h1, h2 {
-            color: #1890ff;
-            margin-bottom: 10px;
-        }
-        ul {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        code {
-            background-color: #eee;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.95em;
-        }
-        .example {
-            background-color: #e6f7ff;
-            padding: 15px;
-            border-left: 5px solid #1890ff;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        th, td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        th {
-            background-color: #1890ff;
-            color: white;
-            font-weight: 600;
-        }
-        tbody tr:hover {
-            background-color: #e6f7ff;
-        }
-        p.intro {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Accueil - Flashcards Anglais</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <!-- MENU DU SITE -->
 
-    <h1>🇬🇧 Dates et nombres ordinaux en anglais britannique</h1>
 
-    <h2>📅 Partie 1 : La constitution d’une date</h2>
-    <p class="intro">
-        En anglais britannique, la date s’écrit généralement avec le jour de la semaine, suivi du jour (sous forme ordinale), du mois et de l’année.
-    </p>
+   <div class="navbar">
     <ul>
-        <li><strong>Ordre :</strong> <code>Day, ordinal day + Month + Year</code> (exemple : <code>Monday, 25th December 2025</code>)</li>
-        <li><strong>Exemple oral :</strong> <code>Monday the twenty-fifth of December twenty twenty-five</code></li>
-        <li>Les jours de la semaine en anglais :
-            <ul>
-                <li>Monday (lundi)</li>
-                <li>Tuesday (mardi)</li>
-                <li>Wednesday (mercredi)</li>
-                <li>Thursday (jeudi)</li>
-                <li>Friday (vendredi)</li>
-                <li>Saturday (samedi)</li>
-                <li>Sunday (dimanche)</li>
-            </ul>
-        </li>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="la_date.html">La date</a></li>
+      <li><a href="verbes.html">Les verbes</a></li>
+      <li><a href="emotions.html">Les emotions</a></li>
+      <li><a href="annimaux.html">Les animaux</a></li>
+      <li><a href="saluer.html">Se saluer</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
     </ul>
+  </div>
 
-    <h2>🔢 Partie 2 : Les nombres ordinaux</h2>
-    <p class="intro">Les nombres ordinaux servent à indiquer l’ordre ou la position (ex : premier, deuxième, etc.). Voici les plus courants avec leur prononciation simplifiée :</p>
+<!-- FIN DU MENU -->    
+  <div class="container">
+        <main>
+            <h1>Quiz sur les dates et chiffres interactif anglais</h1>
+            <div id="quiz-container" class="quiz-container">
+            <!-- Question + réponses apparaîtront ici -->
+            </div>
+            <button id="next-btn" style="display:none;">Question suivante</button>
+            <div id="result" style="margin-top: 1em; font-weight: bold;"></div>
+        </main>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Écriture</th>
-                <th>Mot en anglais</th>
-                <th>Prononciation simplifiée</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>1st</td><td>first</td><td>ferst</td></tr>
-            <tr><td>2nd</td><td>second</td><td>sek-und</td></tr>
-            <tr><td>3rd</td><td>third</td><td>thurd</td></tr>
-            <tr><td>4th</td><td>fourth</td><td>forth</td></tr>
-            <tr><td>5th</td><td>fifth</td><td>fifth</td></tr>
-            <tr><td>6th</td><td>sixth</td><td>sixth</td></tr>
-            <tr><td>7th</td><td>seventh</td><td>sev-unth</td></tr>
-            <tr><td>8th</td><td>eighth</td><td>eith</td></tr>
-            <tr><td>9th</td><td>ninth</td><td>ninth</td></tr>
-            <tr><td>10th</td><td>tenth</td><td>tenth</td></tr>
-            <tr><td>11th</td><td>eleventh</td><td>i-lev-unth</td></tr>
-            <tr><td>12th</td><td>twelfth</td><td>twelfth</td></tr>
-            <tr><td>13th</td><td>thirteenth</td><td>thur-teenth</td></tr>
-            <tr><td>14th</td><td>fourteenth</td><td>for-teenth</td></tr>
-            <tr><td>15th</td><td>fifteenth</td><td>fif-teenth</td></tr>
-            <tr><td>20th</td><td>twentieth</td><td>twen-tee-eth</td></tr>
-            <tr><td>21st</td><td>twenty-first</td><td>twen-tee ferst</td></tr>
-            <tr><td>22nd</td><td>twenty-second</td><td>twen-tee sek-und</td></tr>
-            <tr><td>23rd</td><td>twenty-third</td><td>twen-tee thurd</td></tr>
-            <tr><td>24th</td><td>twenty-fourth</td><td>twen-tee forth</td></tr>
-            <tr><td>25th</td><td>twenty-fifth</td><td>twen-tee fifth</td></tr>
-            <tr><td>30th</td><td>thirtieth</td><td>thur-tee-eth</td></tr>
-            <tr><td>31st</td><td>thirty-first</td><td>thur-tee ferst</td></tr>
-        </tbody>
-    </table>
-
-    <h2>✅ Partie 3 : Exemples complets de dates avec jour</h2>
-    <div class="example"><strong>Monday, 1st January 2025</strong><br>
-        → <em>Monday the first of January twenty twenty-five</em>
-    </div>
-    <div class="example"><strong>Tuesday, 14th July 1789</strong><br>
-        → <em>Tuesday the fourteenth of July seventeen eighty-nine</em>
-    </div>
-    <div class="example"><strong>Friday, 31st October 2025</strong><br>
-        → <em>Friday the thirty-first of October twenty twenty-five</em>
-    </div>
-    <div class="example"><strong>Sunday, 22nd November 2025</strong><br>
-        → <em>Sunday the twenty-second of November twenty twenty-five</em>
-    </div>
-
+        <script src="quiz_dates.js"></script>
+</div>
 </body>
 </html>
