@@ -126,7 +126,35 @@ const questions = [
     { question: "Comment dit-on 'Neuf' en anglais ?", answers: ["Nine", "Eighteen", "Nineteen", "Ninety"], correct: 0 },
     { question: "Comment dit-on 'Dix' en anglais ?", answers: ["Three", "Thirty", "Ten", "Thirteen"], correct: 2 },
     { question: "Comment dit-on 'Onze' en anglais ?", answers: ["Twelve", "Eight", "Fifty", "Eleven"], correct: 3 },
-    { question: "Comment dit-on 'Douze' en anglais ?", answers: ["Twelve", "Eight", "Fifty", "Eleven"], correct: 0 }
+    { question: "Comment dit-on 'Douze' en anglais ?", answers: ["Twelve", "Eight", "Fifty", "Eleven"], correct: 0 },
+    //La famille questions
+    
+      { question: "Comment dit-on 'La mère' en anglais ?", answers: ["The mother", "The father", "The sister", "The aunt"], correct: 0 },
+      { question: "Comment dit-on 'Le frère' en anglais ?", answers: ["The cousin", "The brother", "The uncle", "The son"], correct: 1 },
+      { question: "Comment dit-on 'Le père' en anglais ?", answers: ["The nephew", "The uncle", "The father", "The brother"], correct: 2 },
+      { question: "Comment dit-on 'La sœur' en anglais ?", answers: ["The niece", "The daughter", "The aunt", "The sister"], correct: 3 },
+      
+      { question: "Comment dit-on 'Les parents' en anglais ?", answers: ["The parents", "The children", "The cousins", "The siblings"], correct: 0 },
+      { question: "Comment dit-on 'Le fils' en anglais ?", answers: ["The nephew", "The son", "The uncle", "The brother"], correct: 1 },
+      { question: "Comment dit-on 'La fille' en anglais ?", answers: ["The sister", "The mother", "The daughter", "The aunt"], correct: 2 },
+      { question: "Comment dit-on 'Le grand-père' en anglais ?", answers: ["The uncle", "The grandfather", "The father", "The cousin"], correct: 1 },
+      
+      { question: "Comment dit-on 'La grand-mère' en anglais ?", answers: ["The aunt", "The sister", "The grandmother", "The mother"], correct: 2 },
+      { question: "Comment dit-on 'L’oncle' en anglais ?", answers: ["The nephew", "The uncle", "The cousin", "The brother"], correct: 1 },
+      { question: "Comment dit-on 'La tante' en anglais ?", answers: ["The aunt", "The cousin", "The sister", "The niece"], correct: 0 },
+      { question: "Comment dit-on 'Le cousin' en anglais ?", answers: ["The nephew", "The niece", "The cousin", "The uncle"], correct: 2 },
+      
+      { question: "Comment dit-on 'Le neveu' en anglais ?", answers: ["The nephew", "The niece", "The cousin", "The aunt"], correct: 0 },
+      { question: "Comment dit-on 'La nièce' en anglais ?", answers: ["The uncle", "The nephew", "The niece", "The cousin"], correct: 2 },
+      { question: "Do you have any ___? (frères et sœurs)", answers: ["siblings", "cousins", "parents", "children"], correct: 0 },
+      { question: "What is the English word for 'frère'?", answers: ["brother", "sister", "father", "uncle"], correct: 0 },
+      
+      { question: "What is the English word for 'mère'?", answers: ["mother", "aunt", "daughter", "sister"], correct: 0 },
+      { question: "How do you say 'grand-père' in English?", answers: ["grandfather", "grandmother", "uncle", "father"], correct: 0 },
+      { question: "How do you say 'fils' in English?", answers: ["son", "nephew", "brother", "cousin"], correct: 0 },
+      { question: "How do you say 'sœur' in English?", answers: ["sister", "daughter", "aunt", "mother"], correct: 0 }
+    
+    
 ];
 function getRandomQuestions(num) {
   const copy = [...questions]; // On fait une copie du tableau original
