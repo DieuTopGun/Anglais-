@@ -168,3 +168,24 @@ h1 {
 h2 {
   padding-bottom: 3%;
 }
+
+.family-card {
+  display: flex;
+  justify-content: center;   /* centre horizontalement */
+  align-items: center;       /* centre verticalement */
+  height: 100vh;             /* prend toute la hauteur de la fenêtre */
+  margin: 0;
+}
+
+.family-card img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.family-card img:hover {
+  transform: scale(1.05);
+}
