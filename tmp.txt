@@ -1,24 +1,14 @@
-Geometry
-Géométrie
-Branche des mathématiques sur les formes
-Professors
-Professeurs
-Enseignants à l’université
-Campus
-Campus
-Ensemble des bâtiments universitaires
-Homework
-Devoirs
-Travaux à faire à la maison
-Younger
-Plus jeune
-Qui a moins d’âge
-High school
-Lycée
-École secondaire avant l’université
-Sometimes
-Parfois
-Occasionnellement
-Miss
-Manquer (quelqu’un)
-Ressentir l’absence de quelqu’un
+Beach
+Plage
+Sand
+Sable
+Shell(s)
+Coquillage(s)
+Sandcastle
+Château de sable
+Sailboat
+Voilier
+Surf
+Faire du surf
+Dolphin / Whale
+Dauphin / Baleine
