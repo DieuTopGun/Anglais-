@@ -1,60 +1,24 @@
-First
-D’abord
-Then
-Ensuite
-Wake up
-Se réveiller
-Get dressed
-S’habiller
-Walk
-Marcher
-School
-École
-Ride a bike
-Faire du vélo
-Ride the bus
-Prendre le bus
-Like
-Aimer
-It rains
-Il pleut
-Do not / Don’t
-Ne pas
-Rain
-Pluie
-Eat
-Manger
-Lunch
-Déjeuner (repas du midi)
-Sandwich
-Sandwich
-Apple
-Pomme
-Play
-Jouer
-Outside
-Dehors
-Read
-Lire
-Book
-Livre
-Home
-Maison (chez soi)
-Walking home
-Rentrer à pied à la maison
-Mother
-Mère
-Cook(s)
-Cuisiner
-Soup
-Soupe
-Dinner
-Dîner (repas du soir)
-Hot
-Chaud
-Go to bed
-Aller au lit
-Bed
-Lit
-Happens
-Se passe / Arrive / A lieu
+Geometry
+Géométrie
+Branche des mathématiques sur les formes
+Professors
+Professeurs
+Enseignants à l’université
+Campus
+Campus
+Ensemble des bâtiments universitaires
+Homework
+Devoirs
+Travaux à faire à la maison
+Younger
+Plus jeune
+Qui a moins d’âge
+High school
+Lycée
+École secondaire avant l’université
+Sometimes
+Parfois
+Occasionnellement
+Miss
+Manquer (quelqu’un)
+Ressentir l’absence de quelqu’un
