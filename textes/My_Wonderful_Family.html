@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Wonderful Family</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style_texte.css">
+</head>
+<body>
+    <!-- MENU DU SITE -->
+
+
+ <div class="navbar">
+  <ul>
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../la_date.html">La date</a></li>
+    <li><a href="../verbes.html">Les verbes</a></li>
+    <li><a href="../emotions.html">Les emotions</a></li>
+    <li><a href="../annimaux.html">Les animaux</a></li>
+    <li><a href="../saluer.html">Se saluer</a></li>
+    <li><a href="../la_famille.html">La famille</a></li>
+    <li><a href="exercices.html">Exercices</a></li>
+    <li><a href="../quiz.html">Quiz</a></li>
+  </ul>
+</div>
+
+<!-- FIN DU MENU -->   
+ 
+
+  <div class="main-wrapper_1">
+    <div class="container">
+      <h1>My Wonderful Family</h1>
+      <p>I live in a house near the mountains. I have two brothers and one sister, and I was born last. My father teaches mathematics, and my mother is a nurse at a big hospital. My brothers are very smart and work hard in school. My sister is a nervous girl, but she is very kind. My grandmother also lives with us. She came from Italy when I was two years old. She has grown old, but she is still very strong. She cooks the best food!</p>
+      <p>My family is very important to me. We do lots of things together. My brothers and I like to go on long walks in the mountains. My sister likes to cook with my grandmother. On the weekends we all play board games together. We laugh and always have a good time. I love my family very much.</p>
+      <button class="lexicon-toggle" onclick="toggleLexicon()">Afficher / Masquer le lexique</button>
+      <div class="quiz_1">
+  <div class="score-box">
+    Score : <span id="score">0</span>/5
+  </div>
+
+  <h3>Question 1: My mother is a...</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Doctor</button>
+    <button onclick="checkAnswer(this, true)">Nurse</button>
+    <button onclick="checkAnswer(this, false)">Writer</button>
+    <button onclick="checkAnswer(this, false)">Waitress</button>
+  </div>
+
+  <h3>Question 2: My house is near the...</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">City</button>
+    <button onclick="checkAnswer(this, false)">Monastery</button>
+    <button onclick="checkAnswer(this, true)">Mountains</button>
+    <button onclick="checkAnswer(this, false)">Italy</button>
+  </div>
+
+  <h3>Question 3: How old was I when my grandmother came?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Three years old</button>
+    <button onclick="checkAnswer(this, false)">Just born</button>
+    <button onclick="checkAnswer(this, false)">Ten years old</button>
+    <button onclick="checkAnswer(this, true)">Two years old</button>
+  </div>
+
+  <h3>Question 4: On the weekends, we...</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, true)">Play board games together</button>
+    <button onclick="checkAnswer(this, false)">Go to a movie</button>
+    <button onclick="checkAnswer(this, false)">Clean the house</button>
+    <button onclick="checkAnswer(this, false)">Cook pasta</button>
+  </div>
+
+  <h3>Question 5: My sister is kind, but also...</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Mean</button>
+    <button onclick="checkAnswer(this, false)">Quiet</button>
+    <button onclick="checkAnswer(this, true)">Nervous</button>
+    <button onclick="checkAnswer(this, false)">Strong</button>
+  </div>
+
+  <div id="next-text" style="display: none; margin-top: 30px;">
+    <button onclick="goToNextText()">▶ Texte suivant</button>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+  <div class="lexicon" id="lexicon">
+    <h2>Lexique</h2>
+    <div class="word"><strong>near</strong> — près de</div>
+    <div class="word"><strong>mountains</strong> — montagnes</div>
+    <div class="word"><strong>teaches</strong> — enseigne</div>
+    <div class="word"><strong>nurse</strong> — infirmière</div>
+    <div class="word"><strong>smart</strong> — intelligent</div>
+    <div class="word"><strong>nervous</strong> — nerveuse</div>
+    <div class="word"><strong>grew old / has grown old</strong> — a vieilli</div>
+    <div class="word"><strong>still</strong> — encore, toujours</div>
+    <div class="word"><strong>important</strong> — important</div>
+    <div class="word"><strong>together</strong> — ensemble</div>
+    <div class="word"><strong>board games</strong> — jeux de société</div>
+    <div class="word"><strong>laugh</strong> — rire</div>
+  </div>
+
+  <script>
+    function toggleLexicon() {
+      const lexicon = document.getElementById('lexicon');
+      lexicon.classList.toggle('show');
+    }
+
+    function checkAnswer(button, isCorrect) {
+  const buttons = button.parentElement.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+  if (isCorrect) {
+    button.classList.add('correct');
+  } else {
+    button.classList.add('wrong');
+  }
+}
+
+let score = 0;
+let answeredCount = 0;
+
+function checkAnswer(button, isCorrect) {
+  const buttons = button.parentElement.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+  if (isCorrect) {
+    button.classList.add('correct');
+    score++;
+    document.getElementById('score').innerText = score;
+  } else {
+    button.classList.add('wrong');
+  }
+  answeredCount++;
+  if (answeredCount === 5) {
+    document.getElementById('next-text').style.display = 'block';
+  }
+}
+
+// Le code dans chaque page devrait ressembler à ceci :
+document.querySelector('.lexicon-toggle').addEventListener('click', function() {
+    document.querySelector('.lexicon').classList.toggle('visible');
+});
+
+function goToNextText() {
+  //alert("Tu peux maintenant passer au texte suivant !"); 
+  // Ici tu peux rediriger ou charger le prochain contenu
+  window.location.href = "My_Day.html";
+}
+
+  </script>
+</body>
+</html>

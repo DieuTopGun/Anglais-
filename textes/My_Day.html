@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Wonderful Family</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style_texte.css">
+</head>
+<body>
+    <!-- MENU DU SITE -->
+
+
+ <div class="navbar">
+  <ul>
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../la_date.html">La date</a></li>
+    <li><a href="../verbes.html">Les verbes</a></li>
+    <li><a href="../emotions.html">Les emotions</a></li>
+    <li><a href="../annimaux.html">Les animaux</a></li>
+    <li><a href="../saluer.html">Se saluer</a></li>
+    <li><a href="../la_famille.html">La famille</a></li>
+    <li><a href="exercices.html">Exercices</a></li>
+    <li><a href="../quiz.html">Quiz</a></li>
+  </ul>
+</div>
+
+<!-- FIN DU MENU -->   
+  
+
+  <div class="main-wrapper_1">
+    <div class="container">
+      <h1>My Day</h1>
+      <p>First, I wake up. Then, I get dressed. I walk to school. I do not ride a bike. I do not ride the bus. I like to go to school. It rains. I do not like rain. I eat lunch. I eat a sandwich and an apple. </p>
+      <p>I play outside. I like to play. I read a book. I like to read books. I walk home. I do not like walking home. My mother cooks soup for dinner. The soup is hot. Then, I go to bed. I do not like to go to bed.</p>
+      <button class="lexicon-toggle" onclick="toggleLexicon()">Afficher / Masquer le lexique</button>
+      <div class="quiz_1">
+  <div class="score-box">
+    Score : <span id="score">0</span>/5
+  </div>
+
+  <h3>Question 1: What happens first?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Get dressed</button>
+    <button onclick="checkAnswer(this, true)">Wake up</button>
+    <button onclick="checkAnswer(this, false)">Eat lunch</button>
+    <button onclick="checkAnswer(this, false)">Walk to school</button>
+  </div>
+
+  <h3>Question 2: What do I like?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, true)">Books</button>
+    <button onclick="checkAnswer(this, false)">Walking home</button>
+    <button onclick="checkAnswer(this, false)">Rain</button>
+    <button onclick="checkAnswer(this, false)">Going to bed</button>
+  </div>
+
+  <h3>Question 3: How do I go to school?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">I drive a car</button>
+    <button onclick="checkAnswer(this, false)">I ride the bus</button>
+    <button onclick="checkAnswer(this, true)">I walk</button>
+    <button onclick="checkAnswer(this, false)">I ride a bike</button>
+  </div>
+
+  <h3>Question 4: What do I eat for dinner?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Sandwich</button>
+    <button onclick="checkAnswer(this, false)">Pie</button>
+    <button onclick="checkAnswer(this, false)">Apple</button>
+    <button onclick="checkAnswer(this, true)">Soup</button>
+  </div>
+
+  <h3>Question 5: What do I not like?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, true)">Going to bed</button>
+    <button onclick="checkAnswer(this, false)">Soup</button>
+    <button onclick="checkAnswer(this, false)">Playing</button>
+    <button onclick="checkAnswer(this, false)">Going to school</button>
+  </div>
+
+  <div id="next-text" style="display: none; margin-top: 30px;">
+    <button onclick="goToNextText()">▶ Texte suivant</button>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+  <div class="lexicon" id="lexicon">
+    <h2>Lexique</h2>
+    <div class="word"><strong>First</strong> — D’abord</div>
+    <div class="word"><strong>Then</strong> — Ensuite</div>
+    <div class="word"><strong>Wake up</strong> — Se réveiller</div>
+    <div class="word"><strong>Get dressed</strong> — S’habiller</div>
+    <div class="word"><strong>Walk</strong> — Marcher</div>
+    <div class="word"><strong>It rains</strong> — Il pleut</div>
+    <div class="word"><strong>Lunch</strong> — Déjeuner (repas du midi)</div>
+    <div class="word"><strong>Happens</strong> — Se passe / Arrive / A lieu</div>
+  </div>
+
+  <script>
+    function toggleLexicon() {
+      const lexicon = document.getElementById('lexicon');
+      lexicon.classList.toggle('show');
+    }
+
+    function checkAnswer(button, isCorrect) {
+  const buttons = button.parentElement.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+  if (isCorrect) {
+    button.classList.add('correct');
+  } else {
+    button.classList.add('wrong');
+  }
+}
+
+let score = 0;
+let answeredCount = 0;
+
+function checkAnswer(button, isCorrect) {
+  const buttons = button.parentElement.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+  if (isCorrect) {
+    button.classList.add('correct');
+    score++;
+    document.getElementById('score').innerText = score;
+  } else {
+    button.classList.add('wrong');
+  }
+  answeredCount++;
+  if (answeredCount === 5) {
+    document.getElementById('next-text').style.display = 'block';
+  }
+}
+
+// Le code dans chaque page devrait ressembler à ceci :
+document.querySelector('.lexicon-toggle').addEventListener('click', function() {
+    document.querySelector('.lexicon').classList.toggle('visible');
+});
+
+function goToNextText() {
+  //alert("Tu peux maintenant passer au texte suivant !"); 
+  // Ici tu peux rediriger ou charger le prochain contenu
+  window.location.href = "My_name_is_John.html";
+}
+
+  </script>
+</body>
+</html>

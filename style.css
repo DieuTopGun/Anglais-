@@ -14,8 +14,12 @@ body {
   background-color: #f4f4f4;
 }
 .container {
-  margin-left: 8%;
-  margin-right: 8%;
+  width: 90%;
+  margin: 5vh auto;
+  padding: 2rem;
+  background: white;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 120%;
 }
 

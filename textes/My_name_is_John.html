@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My name is John</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style_texte.css">
+</head>
+<body>
+    <!-- MENU DU SITE -->
+
+
+ <div class="navbar">
+  <ul>
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../la_date.html">La date</a></li>
+    <li><a href="../verbes.html">Les verbes</a></li>
+    <li><a href="../emotions.html">Les emotions</a></li>
+    <li><a href="../annimaux.html">Les animaux</a></li>
+    <li><a href="../saluer.html">Se saluer</a></li>
+    <li><a href="../la_famille.html">La famille</a></li>
+    <li><a href="exercices.html">Exercices</a></li>
+    <li><a href="../quiz.html">Quiz</a></li>
+  </ul>
+</div>
+
+<!-- FIN DU MENU -->   
+  
+
+  <div class="main-wrapper_1">
+    <div class="container">
+      <h1>My name is John</h1>
+      <p>Hi! Nice to meet you! My name is John Smith. I am 19 and a student in college. I go to college in New York. My favorite courses are Geometry, French, and History. English is my hardest course. My professors are very friendly and smart. It’s my second year in college now. I love it! </p>
+      <p>I live in a big house on Ivy Street. It’s near the college campus. I share the house with three other students. Their names are Bill, Tony, and Paul. We help each other with homework. On the weekend, we play football together.</p>
+      <p> I have a younger brother. He just started high school. He is 14 and lives with my parents. They live on Mulberry Street in Boston. Sometimes they visit me in New York. I am happy when they visit. My Mom always brings me sweets and candy when they come. I really miss them, too!</p>
+      <button class="lexicon-toggle" onclick="toggleLexicon()">Afficher / Masquer le lexique</button>
+      
+      <div class="quiz_1">
+  <div class="score-box">
+    Score : <span id="score">0</span>/5
+  </div>
+
+  <h3>Question 1: Where does John Smith go to college?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Berlin</button>
+    <button onclick="checkAnswer(this, false)">Paris</button>
+    <button onclick="checkAnswer(this, true)">New York</button>
+    <button onclick="checkAnswer(this, false)">Boston</button>
+  </div>
+
+  <h3>Question 2: What is John Smith’s hardest course?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">French</button>
+    <button onclick="checkAnswer(this, true)">English</button>
+    <button onclick="checkAnswer(this, false)">Art</button>
+    <button onclick="checkAnswer(this, false)">Math</button>
+  </div>
+
+  <h3>Question 3: Who shares a house with John Smith?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Bill, John, and Tom</button>
+    <button onclick="checkAnswer(this, false)">Anna, Margaret, and Tanya</button>
+    <button onclick="checkAnswer(this, true)">Bill, Tony, and Paul</button>
+    <button onclick="checkAnswer(this, false)">Frank, Tony, and Mike</button>
+  </div>
+
+  <h3>Question 4: How old is John Smith’s younger brother?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">eleven</button>
+    <button onclick="checkAnswer(this, false)">seven</button>
+    <button onclick="checkAnswer(this, false)">thirteen</button>
+    <button onclick="checkAnswer(this, true)">fourteen</button>
+  </div>
+
+  <h3>Question 5: What does John Smith’s Mom bring him when they visit?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Flowers and coffee</button>
+    <button onclick="checkAnswer(this, true)">Sweets and candy</button>
+    <button onclick="checkAnswer(this, false)">Candy and ice cream</button>
+    <button onclick="checkAnswer(this, false)">Fruits and vegetables</button>
+  </div>
+
+  <div id="next-text" style="display: none; margin-top: 30px;">
+    <button onclick="goToNextText()">▶ Texte suivant</button>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+  <div class="lexicon" id="lexicon">
+    <h2>Lexique</h2>
+    <div class="word"><strong>Professors</strong> — Professeurs Enseignants à l’université </div>
+    <div class="word"><strong>Homework</strong> — Devoirs</div>
+    <div class="word"><strong>Younger</strong> — Plus jeune</div>
+    <div class="word"><strong>High school</strong> — Lycée</div>
+    <div class="word"><strong>Sometimes</strong> — Parfois Occasionnellement</div>
+    <div class="word"><strong>Miss</strong> — Manquer (quelqu’un)</div>
+    <div class="word"><strong>Shares</strong> — Partage / Partager</div>
+  </div>
+
+  <script>
+    function toggleLexicon() {
+      const lexicon = document.getElementById('lexicon');
+      lexicon.classList.toggle('show');
+    }
+
+    function checkAnswer(button, isCorrect) {
+  const buttons = button.parentElement.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+  if (isCorrect) {
+    button.classList.add('correct');
+  } else {
+    button.classList.add('wrong');
+  }
+}
+
+let score = 0;
+let answeredCount = 0;
+
+function checkAnswer(button, isCorrect) {
+  const buttons = button.parentElement.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+  if (isCorrect) {
+    button.classList.add('correct');
+    score++;
+    document.getElementById('score').innerText = score;
+  } else {
+    button.classList.add('wrong');
+  }
+  answeredCount++;
+  if (answeredCount === 5) {
+    document.getElementById('next-text').style.display = 'block';
+  }
+}
+
+// Le code dans chaque page devrait ressembler à ceci :
+document.querySelector('.lexicon-toggle').addEventListener('click', function() {
+    document.querySelector('.lexicon').classList.toggle('visible');
+});
+
+function goToNextText() {
+  //alert("Tu peux maintenant passer au texte suivant !"); 
+  // Ici tu peux rediriger ou charger le prochain contenu
+  window.location.href = "Our_Vacation.html";
+}
+
+  </script>
+</body>
+</html>

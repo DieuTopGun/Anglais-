@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Vacation</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style_texte.css">
+</head>
+<body>
+    <!-- MENU DU SITE -->
+
+
+ <div class="navbar">
+  <ul>
+    <li><a href="../index.html">Accueil</a></li>
+    <li><a href="../la_date.html">La date</a></li>
+    <li><a href="../verbes.html">Les verbes</a></li>
+    <li><a href="../emotions.html">Les emotions</a></li>
+    <li><a href="../annimaux.html">Les animaux</a></li>
+    <li><a href="../saluer.html">Se saluer</a></li>
+    <li><a href="../la_famille.html">La famille</a></li>
+    <li><a href="exercices.html">Exercices</a></li>
+    <li><a href="../quiz.html">Quiz</a></li>
+  </ul>
+</div>
+
+<!-- FIN DU MENU -->   
+  
+
+  <div class="main-wrapper_1">
+    <div class="container">
+      <h1>Our Vacation</h1>
+      <p>Every year we go to Florida. We like to go to the beach.</p>
+      <p>My favorite beach is called Emerson Beach. It is very long, with soft sand and palm trees. It is very beautiful. I like to make sandcastles and watch the sailboats go by. Sometimes there are dolphins and whales in the water!</p>
+      <p>Every morning we look for shells in the sand. I found fifteen big shells last year. I put them in a special place in my room. This year I want to learn to surf. It is hard to surf, but so much fun! My sister is a good surfer. She says that she can teach me. I hope I can do it!</p>
+      <button class="lexicon-toggle" onclick="toggleLexicon()">Afficher / Masquer le lexique</button>
+      <div class="quiz_1">
+  <div class="score-box">
+    Score : <span id="score">0</span>/5
+  </div>
+
+  <h3>Question 1: My favorite beach is...</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Palm Beach</button>
+    <button onclick="checkAnswer(this, false)">Surf Beach</button>
+    <button onclick="checkAnswer(this, true)">Emerson Beach</button>
+    <button onclick="checkAnswer(this, false)">Long Beach</button>
+  </div>
+
+  <h3>Question 2: What animals do I see in the water?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Dogs</button>
+    <button onclick="checkAnswer(this, false)">Starfish</button>
+    <button onclick="checkAnswer(this, false)">Sharks</button>
+    <button onclick="checkAnswer(this, true)">Dolphins</button>
+  </div>
+
+  <h3>Question 3: How many shells did I find last year?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Fifty</button>
+    <button onclick="checkAnswer(this, true)">Fifteen</button>
+    <button onclick="checkAnswer(this, false)">Five</button>
+    <button onclick="checkAnswer(this, false)">Twelve</button>
+  </div>
+
+  <h3>Question 4: What do I want to learn this year?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">Sailing</button>
+    <button onclick="checkAnswer(this, false)">Swimming</button>
+    <button onclick="checkAnswer(this, true)">Surfing</button>
+    <button onclick="checkAnswer(this, false)">How to find shells</button>
+  </div>
+
+  <h3>Question 5: Where did I put my shells last year?</h3>
+  <div class="answers_1">
+    <button onclick="checkAnswer(this, false)">In Florida</button>
+    <button onclick="checkAnswer(this, true)">In my room</button>
+    <button onclick="checkAnswer(this, false)">In a box</button>
+    <button onclick="checkAnswer(this, false)">In the garage</button>
+  </div>
+
+  <div id="next-text" style="display: none; margin-top: 30px;">
+    <button onclick="goToNextText()">▶ Texte suivant</button>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+  <div class="lexicon" id="lexicon">
+    <h2>Lexique</h2>
+    <div class="word"><strong>Beach</strong> — Plage</div>
+    <div class="word"><strong>Sand</strong> — Sable</div>
+    <div class="word"><strong>Shell(s)</strong> — Coquillage(s)</div>
+    <div class="word"><strong>Sandcastle</strong> — Château de sable</div>
+    <div class="word"><strong>Sailboat</strong> — Voilier</div>
+    <div class="word"><strong>Dolphin</strong> — Dauphin</div>
+    <div class="word"><strong>Whale</strong> — Baleine</div>
+  </div>
+
+  <script>
+    function toggleLexicon() {
+      const lexicon = document.getElementById('lexicon');
+      lexicon.classList.toggle('show');
+    }
+
+    function checkAnswer(button, isCorrect) {
+  const buttons = button.parentElement.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+  if (isCorrect) {
+    button.classList.add('correct');
+  } else {
+    button.classList.add('wrong');
+  }
+}
+
+let score = 0;
+let answeredCount = 0;
+
+function checkAnswer(button, isCorrect) {
+  const buttons = button.parentElement.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+  if (isCorrect) {
+    button.classList.add('correct');
+    score++;
+    document.getElementById('score').innerText = score;
+  } else {
+    button.classList.add('wrong');
+  }
+  answeredCount++;
+  if (answeredCount === 5) {
+    document.getElementById('next-text').style.display = 'block';
+  }
+}
+
+// Le code dans chaque page devrait ressembler à ceci :
+document.querySelector('.lexicon-toggle').addEventListener('click', function() {
+    document.querySelector('.lexicon').classList.toggle('visible');
+});
+
+function goToNextText() {
+  alert("Tu as terminée !"); 
+  // Ici tu peux rediriger ou charger le prochain contenu
+  // Exemple : window.location.href = "texte2.html";
+}
+
+  </script>
+</body>
+</html>
