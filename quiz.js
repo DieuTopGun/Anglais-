@@ -22,7 +22,7 @@ const questions = [
   // Jours de la semaine (13 questions)
   { question: "Comment dit-on 'lundi' en anglais ?", answers: ["Saturday", "Monday", "Sunday", "Tuesday"], correct: 1 },
   { question: "Comment dit-on 'mercredi' en anglais ?", answers: ["Thursday", "Wednesday", "Tuesday", "Monday"], correct: 1 },
-  { question: "Comment dit-on 'vendredi' en anglais ?", answers: ["Sunday", "Friday", "Monday", "Friday"], correct: 1 },
+  { question: "Comment dit-on 'vendredi' en anglais ?", answers: ["Sunday", "Friday", "Monday", "Thursday"], correct: 1 },
   { question: "Comment dit-on 'dimanche' en anglais ?", answers: ["Tuesday", "Sunday", "Monday", "Saturday"], correct: 1 },
   { question: "Comment dit-on 'jeudi' en anglais ?", answers: ["Thursday", "Friday", "Tuesday", "Wednesday"], correct: 0 },
   { question: "Comment dit-on 'samedi' en anglais ?", answers: ["Saturday", "Sunday", "Friday", "Thursday"], correct: 0 },
